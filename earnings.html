@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loftic</title>
+</head>
+<body>
+    <p> Total earnings:</p>
+    <p id="total"></p>
+    <p> Total earnings after changing the price:</p>
+    <p id="total1"></p>
+    <script>
+        let shirtPrice = 400; 
+        const shirtSold = 5;
+
+        const capPrice = 150;
+        const capSold = 3;
+
+        let totalEarnings = (shirtPrice * shirtSold) + (capPrice * capSold);
+
+        document.getElementById("total").innerHTML= totalEarnings;
+
+        shirtPrice= 450;
+        totalEarnings = (shirtPrice * shirtSold) + (capPrice * capSold);
+
+        document.getElementById("total1").innerHTML= totalEarnings;
+    </script>
+</body>
+</html> 
