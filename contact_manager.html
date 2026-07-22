@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+</head>
+<body>
+
+    <h2>Contact Information</h2>
+
+    <p id="contact1"></p>
+    <p id="contact2"></p>
+
+    <script>
+
+        const contact1 = {
+            name: "Adarsh",
+            phone: "9876543210",
+            email: "adarsh@example.com",
+            
+            getInfo: function () {
+                return "Name: " + this.name +
+                       ", Phone: " + this.phone +
+                       ", Email: " + this.email;
+            }
+        };
+
+        function printContactInfo(contact, elementId) {
+            document.getElementById(elementId).textContent = contact.getInfo();
+        }
+
+        const contact2 = {
+            name: "Saran",
+            phone: "9123456780",
+            email: "saran@example.com",
+
+            getInfo: function () {
+                return "Name: " + this.name +
+                       ", Phone: " + this.phone +
+                       ", Email: " + this.email;
+            }
+        };
+
+        printContactInfo(contact1, "contact1");
+        printContactInfo(contact2, "contact2");
+    </script>
+
+</body>
+</html>
