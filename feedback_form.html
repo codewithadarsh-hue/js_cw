@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <script>
+        function myFunction() {
+        var feedback = "   I loved the FOOD and the service!   ";
+
+        // Remove spaces
+        feedback = feedback.trim();
+        document.getElementById("demo").innerHTML = feedback;
+
+        // Convert to lowercase
+        feedback = feedback.toLowerCase();
+        document.getElementById("demo1").innerHTML = feedback;
+        
+        // Replace food with ambience
+        feedback = feedback.replace("food","ambience");
+        document.getElementById("demo2").innerHTML = feedback;
+
+        // Find position of service
+        let pos = feedback.indexOf("service");
+        document.getElementById("demo3").innerHTML = pos;
+
+        // Convert to array
+        let output = feedback.split(" ");
+        document.getElementById("demo4").innerHTML = output;
+        }
+</script>
+
+</body>
+</html>
