@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="myFunction()">Click Here</button>
+    <p>Absolute Difference:</p>
+    <p id="demo"></p>
+    <p>The Lowest Value is:</p>
+    <p id="demo1"></p>
+    <p>The Highest value is:</p>
+    <p id="demo2"></p>
+
+    <script>
+
+        function myFunction() {
+            let randomNo = Math.floor(Math.random() * 50) + 1;
+            let score = Number(document.getElementById("input").value);
+            let difference = Math.abs(randomNo - score);
+            document.getElementById("demo").innerHTML = difference;
+            console.log("Square Root = " + Math.sqrt(score));
+            console.log("Pi = " + Math.PI);
+            let result = "20" * 5;
+            console.log("Implicit Conversion ="+result);
+            document.getElementById("demo1").innerHTML = Math.min(10,20,randomNo);
+            document.getElementById("demo2").innerHTML = Math.max(10,20,randomNo);
+        }
+
+    </script>
+</body>
+</html>
