@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+<script>
+
+let students = [
+    { name: "Adarsh", score: 75 },
+    { name: "Saran", score: 45 },
+    { name: "Amritha", score: 95 },
+    { name: "Varsha", score: 65 },
+    { name: "Abhishek", score: 30 }
+];
+
+// 1. List all student names
+console.log("Student Names:");
+students.forEach(function(student) {
+    console.log(student.name);
+}); 
+
+// 2. Students scoring above 60
+let highScorers = students
+    .filter(function(student) {
+        return student.score > 60;
+    })
+    .map(function(student) {
+        return student.name;
+    });
+
+console.log("Students Scoring Above 60:", highScorers);
+
+// 3. Total score
+let sum = students.reduce(function(total, student) {
+    return total + student.score;
+}, 0);
+
+console.log("Total Score:", sum);
+
+// 4. Check if all students passed
+let check = students.every(function(student) {
+    return student.score > 35;
+});
+
+console.log("All Students Passed:", check);
+
+// 5. Check if at least one student scored above 90
+let result = students.some(function(student) {
+    return student.score > 90;
+});
+
+console.log("Any Student Scored Above 90:", result);
+
+// 6. Sort students by score in descending order
+students.sort(function(a, b) {
+    return b.score - a.score;
+});
+
+console.log("Students Sorted by Score:");
+students.forEach(function(student) {
+    console.log(student.name + " - " + student.score);
+});
+
+</script>
+</body>
+</html>
