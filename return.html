@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Product</title>
+</head>
+<body>
+    <button onclick="myFunction()">Click Here to return</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        let order = {
+            itemName:"Laptop",
+            isDelivered:true, 
+            daysSinceDelivery: 4
+        }
+
+        function myFunction(){
+            let returnP = (order.isDelivered && order.daysSinceDelivery <= 7 ) ? "Eligible for Return":"Return Period Expired";
+            let checkitem = ("itemName" in order) ? "itemName property exists":"itemName property does not exist";
+            delete order.daysSinceDelivery;
+            document.getElementById("demo").innerHTML = returnP;
+            document.getElementById("demo1").innerHTML = checkitem;
+         }
+
+    </script>
+</body>
+</html>
