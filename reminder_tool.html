@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder</title>
+</head>
+<body>
+    <h3>Enter Your Last Birthday</h3>
+    <input type="date" id="input">
+    <button onclick="myFunction()">Submit</button>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+
+    <script>
+        
+        function myFunction() {
+
+        let userDate = document.getElementById("input").value;
+        let birthday = new Date(userDate);
+        let months = ["January", "February", "March", "April","May", "June", "July", "August",
+                        "September", "October", "November", "December"
+                    ];
+                    
+        let day = birthday.getDate();
+        let month = months[birthday.getMonth()];
+        let year = birthday.getFullYear();
+
+        document.getElementById("demo").innerHTML ="Day: " + day +"<br>Month: " + month +"<br>Year: " + year;
+        
+        let today = new Date();
+        let yearPassed = today.getFullYear() - birthday.getFullYear();
+            if (
+                today.getMonth() < birthday.getMonth() ||
+                (today.getMonth() === birthday.getMonth() &&
+                today.getDate() < birthday.getDate())
+            ) {
+               yearPassed = yearPassed - 1;
+            }
+
+        let verify = (yearPassed >= 1) ? "It has been more than a year since that date.": "It has been less than a year since that date.";
+
+        document.getElementById("demo1").innerHTML = "Full Years Passed: " + yearPassed ;
+                
+        document.getElementById("demo2").innerHTML = verify;
+
+        }
+    </script>
+</body> 
+</html>
