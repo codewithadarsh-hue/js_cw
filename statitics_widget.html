@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Statistics</title>
+</head>
+<body>
+    <p>The difference between the random number and user score is :</p>
+    <p id="demo"></p>
+    <p>The rounded square root of user score is :</p>
+    <p id="demo1"></p>
+    <p>Value of Pi Using Js :</p>
+    <p id="demo2"></p>  
+
+    <script>
+        
+        let randomNo = Math.floor(Math.random() * 100) + 1;
+        let score = "60";
+        score = Number(score);
+        let difference = randomNo - score ;
+        document.getElementById("demo").innerHTML= difference;
+        document.getElementById("demo1").innerHTML = Math.round(Math.sqrt(score));
+        document.getElementById("demo2").innerHTML = Math.PI
+        let result = "50" * 2;
+        console.log("result="+result);
+
+    </script>
+</body>
+</html>
