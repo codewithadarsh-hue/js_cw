@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing</title>
+</head>
+<body>
+
+<h2>Grocery Store</h2>
+
+<p id="merged"></p>
+<p id="filtered"></p>
+<p id="updated"></p>
+
+<script>
+
+    let product = ["Apple", "Banana", "Orange", "Mango"];
+    let price = [50, 30, 60, 70];
+
+    let productList = [];
+    let pLen = product.length;
+
+    document.getElementById("merged").innerHTML = "All Products:<br>";
+    document.getElementById("filtered").innerHTML = "<br>Products with Price Greater Than 50:<br>";
+
+    for (let i = 0; i < pLen; i++) {
+
+        let entry = "Product: " + product[i] + " - Price: " + price[i];
+
+        // Merge into array
+        productList.push(entry);
+
+        // Display all products
+        document.getElementById("merged").innerHTML += entry + "<br>";
+
+        // Display products with price > 50 
+        document.getElementById("filtered").innerHTML +=
+            (price[i] > 50) ? entry + "<br>" : "";
+    }
+
+    product.push("Watermelon");
+    price.push(80);
+
+    document.getElementById("updated").innerHTML = "<br>Updated Product List:<br>";
+
+    for (let i = 0; i < product.length; i++) {
+        document.getElementById("updated").innerHTML +=
+            "Product: " + product[i] + " - Price: " + price[i] + "<br>";
+    }
+
+</script>
+
+</body>
+</html>
