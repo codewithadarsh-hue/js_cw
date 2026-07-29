@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+<body>
+
+<script>
+
+    let chances = 0;
+    let i;
+
+    for (i = 1; chances < 5; i++) {
+
+        let number = Number(prompt("Enter a number between 1 and 5"));
+
+        if (number < 1 || number > 5) {
+            console.log("Invalid input");
+            continue;
+        }
+
+        chances++;
+
+        switch (number) {
+            case 1:
+                console.log("One");
+                break;
+
+            case 2:
+                console.log("Two");
+                break;
+
+            case 3:
+                console.log("Three");
+                break;
+
+            case 4:
+                console.log("Four");
+                break;
+
+            case 5:
+                console.log("Five");
+                break;
+        }
+
+        if (number == 3) {
+            console.log("You guessed it right!");
+            break;
+        } 
+        else {
+        console.log("Wrong guess. Try again.");
+        }
+
+    }
+
+    if (chances == 5) {
+    console.log("Game over");
+    }
+
+</script>
+
+</body>
+</html>
