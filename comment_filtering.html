@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment section</title>
+</head>
+<body>
+    <input type="text" id="input"
+        value="I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.">
+
+    <button onclick="myFunction()">Submit</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction(){
+            
+        let comment = document.getElementById("input").value;
+        let filteredComment = comment.replace(/\b(bad|ugly|stupid)\b/gi,"***");
+
+        let numbers = comment.match(/\d+/g);
+        let numberCount = numbers ? numbers.length : 0;
+
+        let capitalWords = comment.match(/\b[A-Z][a-zA-Z]*\b/g);
+        let capitalCount = capitalWords ? capitalWords.length : 0;
+        
+        let result = "Cleaned Comment: " + filteredComment + "<br><br>" + "Numbers Found: " + numberCount + "<br>" +
+                    "Capitalized Words: " + capitalCount;
+
+        document.getElementById("demo").innerHTML = result;
+
+        }
+    </script>
+    
+</body>
+</html>
