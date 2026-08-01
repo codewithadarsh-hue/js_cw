@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Checker</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+
+        // JSON string
+        let feedbackJSON = '{"name":"Adarsh","feedback":"THANK you for your excellent service!"}';
+
+        try {
+
+            // Convert JSON string to object
+            let feedbackData = JSON.parse(feedbackJSON);
+
+            document.getElementById("demo").innerHTML =
+                "Customer: " + feedbackData.name +
+                "<br>Feedback: " + feedbackData.feedback;
+
+            // Named arrow function
+            const checkFeedback = (text) => {
+                return /thank/i.test(text);
+            };
+
+            if (checkFeedback(feedbackData.feedback)) {
+                document.getElementById("demo1").innerHTML =
+                    "Positive feedback received";
+            } else {
+                document.getElementById("demo1").innerHTML =
+                    "Feedback noted";
+            }
+
+        } catch (error) {
+
+            document.getElementById("demo1").innerHTML =
+                "Invalid JSON: " + error.message;
+
+        }
+
+    </script>
+
+</body>
+</html>
