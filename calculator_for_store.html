@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <button onclick="myFunction()">Start Shopping</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+
+            let output = "";
+
+            for (let i = 1; i <= 5; i++) {
+
+                let code = Number(prompt("Enter Product Code (1-3):"));
+                let quantity = Number(prompt("Enter Quantity:"));
+
+                let productName;
+                let price;
+                let total;
+
+                switch (code) {
+
+                    case 1:
+                        productName = "Apple";
+                        price = 30;
+                        break;
+
+                    case 2:
+                        productName = "Banana";
+                        price = 10;
+                        break;
+
+                    case 3:
+                        productName = "Mango";
+                        price = 50;
+                        break;
+
+                    default:
+                        alert("Invalid Product Code");
+                        continue;
+                }
+
+                total = price * quantity;
+
+                output +=
+                "Purchase " + i + "<br>" +
+                "Product: " + productName + "<br>" +
+                "Quantity: " + quantity + "<br>" +
+                "Total Price: ₹" + total + "<br>";
+
+                if (total > 100) {
+                    output += "High purchase";
+                } else {
+                    output += "Normal purchase";
+                }
+
+                output += "<br><br>";
+            }
+
+            document.getElementById("demo").innerHTML = output;
+        }
+    </script>
+
+</body>
+</html>
