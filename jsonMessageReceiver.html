@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+</head>
+<body>
+    <script>
+        // JSON string
+        const userJSON = `{
+                            "name": "Adarsh",
+                            "email": "adarsh@example.com",
+                            "message": "I would like more information about your services."
+                        }`;
+
+        try {
+        // Convert JSON text into a JavaScript object
+        const user = JSON.parse(userJSON);
+
+        // Named arrow function
+        const showMessage = (userData) => {
+            console.log(`Message received from ${userData.name}`);
+        };
+
+        // Run the function
+        showMessage(user);
+
+        } catch (error) {
+        // Display error message if JSON is invalid
+            console.error("Error:", error.message);
+        }
+    </script>
+</body>
+</html>
