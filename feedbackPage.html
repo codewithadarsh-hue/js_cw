@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+
+    <h2>Feedback Form</h2>
+
+    <form id="feedbackForm">
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Feedback:</label><br>
+        <textarea id="feedback" rows="4" cols="40" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h3>Submitted Feedback</h3>
+    <div id="feedbackDisplay">
+        <p><b>Name:</b> <span id="displayName"></span></p>
+        <p><b>Feedback:</b> <span id="displayFeedback"></span></p>
+    </div>
+
+    <script>
+        const form = document.getElementById("feedbackForm");
+        const message = document.getElementById("message");
+        const feedbackDisplay = document.getElementById("feedbackDisplay");
+
+        // Form submission
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const feedback = document.getElementById("feedback").value;
+
+            // Display the submitted values
+            document.getElementById("displayName").textContent = name;
+            document.getElementById("displayFeedback").textContent = feedback;
+
+            // Show confirmation message in green
+            message.textContent = "Thanks for your feedback!";
+            message.style.color = "green";
+
+            // Hide the message after 5 seconds
+            setTimeout(function() {
+                message.textContent = "";
+            }, 5000);
+
+            // Clear the form
+            form.reset();
+        });
+
+        // Change text color on hover
+        feedbackDisplay.addEventListener("mouseover", function() {
+            feedbackDisplay.style.color = "blue";
+        });
+
+        // Restore text color when mouse leaves
+        feedbackDisplay.addEventListener("mouseout", function() {
+            feedbackDisplay.style.color = "black";
+        });
+    </script>
+
+</body>
+</html>
