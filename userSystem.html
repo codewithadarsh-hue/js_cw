@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        // User class
         class User {
             constructor(name, age, email) {
                 this.name = name;
@@ -14,18 +15,22 @@
                 this.email = email;
             }
 
+            // Getter for name
             get getName() {
                 return this.name;
             }
 
+            // Getter for age   
             get getAge() {
                 return this.age;
             }
 
+            // Getter for email
             get getEmail() {
                 return this.email;
             }
 
+            // Setter for email
             set setEmail(newEmail) {
                 if (newEmail.includes("@")) {
                     this.email = newEmail;
@@ -35,6 +40,27 @@
                 }
             }
         }
+
+        // Create an object
+        const user1 = new User("Adarsh", 21, "adarsh@example.com");
+
+        // Display initial details
+        console.log("Initial User Details:");
+        console.log("Name:", user1.getName);
+        console.log("Age:", user1.getAge);
+        console.log("Email:", user1.getEmail);
+
+        // Update email with a valid email
+        user1.setEmail = "adarsh123@gmail.com";
+
+        // Try updating email with an invalid email
+        user1.setEmail = "adarsh123gmail.com";
+
+        // Display final details
+        console.log("\nFinal User Details:");
+        console.log("Name:", user1.getName);
+        console.log("Age:", user1.getAge);
+        console.log("Email:", user1.getEmail);
 
     </script>
 </body>
